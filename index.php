@@ -10,27 +10,6 @@
 	</head>
 		<body>
 
-			<?php
-
-				require 'vendor/autoload.php';
-
-				use Medoo\Medoo;
-
-				$database = new Medoo([
-					'type' => 'mysql',
-					'host' => 'localhost',
-					'database' => 'informatica_db',
-					'username' => 'alumno',
-					'password' => 'alumno'
-				]);
-
-
-				$data = $database->select('personas', ['id_persona']);
-
-				d($data);
-
-			?>
-
 			<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 			<script src="dist/js/main.js"></script>
