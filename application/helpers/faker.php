@@ -1,25 +1,14 @@
 <?php
 
-	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/application/servers/mariadb.php' );
-	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/application/sqlite/sqlite.php' );
+	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/application/db/db.php' );
 	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/application/helpers/logs.php' );
 	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/vendor/autoload.php' );
 
 	class HelperFaker {
 
-		private $mariadb;
-		private $sqlite;
-
 		private $faker;
 
-		private $rows = [];
-		private $data = [];
-
-		private const QUERY = 'INSERT INTO personas VALUES(null, ?, ?, ?, ?, ?, ?)';
-
 		function __construct() {
-			$this->mariadb = new MariaDB();
-			$this->sqlite = new SQLite();
 			$this->faker = Faker\Factory::create();
 		}
 
@@ -39,22 +28,8 @@
 		}
 
 		function addFakeData() {
-			try {
-				foreach( $this->generateFakeData() as $row ):
-					$stmt = $this->mariadb->open()->prepare( self::QUERY );
-					$stmt->bindParam( 1, $row['nombres'] );
-					$stmt->bindParam( 2, $row['ap'] );
-					$stmt->bindParam( 3, $row['am'] );
-					$stmt->bindParam( 4, $row['fecha_nacimiento'] );
-					$stmt->bindParam( 5, $row['numero_celular'] );
-					$stmt->bindParam( 6, $row['correo'] );
-					$stmt->execute();
-				endforeach;
-			} catch( PDOException $e ) {
-				make_log( __CLASS__, __FUNCTION__, $e->getMessage() );
-			} finally {
-				$this->mariadb->close();
-			}
+			foreach( $this->generateFakeData() as $row ):
+			endforeach;
 		}
 
 	}

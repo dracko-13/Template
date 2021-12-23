@@ -1,40 +1,16 @@
 <?php
 
-	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/application/servers/mariadb.php' );
-	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/application/sqlite/sqlite.php' );
-	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/application/constants/queries.php' );
+	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/application/db/db.php' );
 	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/application/helpers/faker.php' );
 	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/application/helpers/logs.php' );
 
 	class DAO {
 
-		private $mariadb;
-		private $sqlite;
-
-		private $rows = [];
-		private $data = [];
-
-		public function __construct() {
-			$this->mariadb = new MariaDB();
-			$this->sqlite = new SQLite();
-		}
-
 		public function test_connection_db() {
-			try {
-				$stmt = $this->mariadb->open()->prepare( SHOW_DATABASES );
-				$stmt->execute();
-				while ( $this->rows = $stmt->fetch( PDO::FETCH_ASSOC ) ):
-					$this->data = $this->rows;
-				endwhile;
-				echo json_encode( $this->data );
-			} catch( PDOException $e ) {
-				make_log( __CLASS__, __FUNCTION__, $e->getMessage() );
-			} finally {
-				$stmt = NULL;
-				$this->mariadb->close();
-				unset( $this->data );
-				unset( $this->rows );
-			}
+			
+			if( $db->error ):
+				make_log( __CLASS__, __FUNCTION__, $db->error );
+			endif;
 		}
 
 	}
