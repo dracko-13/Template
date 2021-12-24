@@ -8,8 +8,8 @@
 
 	switch ( $choice ):
 
-		case 'test_connection_db':
-			return $dao->test_connection_db();
+		default:
+			header( 'Location: /' );
 		break;
 
 	endswitch;

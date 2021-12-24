@@ -6,9 +6,11 @@
 
 	class HelperFaker {
 
+		private $db = NULL;
 		private $faker;
 
 		function __construct() {
+			$this->db = new Databases();
 			$this->faker = Faker\Factory::create();
 		}
 
@@ -28,8 +30,13 @@
 		}
 
 		function addFakeData() {
-			foreach( $this->generateFakeData() as $row ):
-			endforeach;
+			$response = $this->db->MariaDB()->insert( 'personas', $this->generateFakeData() );
+
+			if( $this->db->MariaDB()->error ):
+				make_log( __CLASS__, __FUNCTION__, $this->db->MariaDB()->error );
+			else:
+				echo 'Affected rows: ' . $response->rowCount();
+			endif;
 		}
 
 	}

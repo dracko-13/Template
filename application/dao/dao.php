@@ -6,11 +6,10 @@
 
 	class DAO {
 
-		public function test_connection_db() {
-			
-			if( $db->error ):
-				make_log( __CLASS__, __FUNCTION__, $db->error );
-			endif;
+		private $db = NULL;
+
+		function __construct() {
+			$this->db = new Databases();
 		}
 
 	}
