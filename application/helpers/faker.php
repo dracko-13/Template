@@ -40,7 +40,3 @@
 		}
 
 	}
-
-	$h = new HelperFaker();
-
-	$h->addFakeData();

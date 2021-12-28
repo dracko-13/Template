@@ -1,3 +1,13 @@
+<?php
+
+	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/application/helpers/faker.php' );
+
+	$faker = new HelperFaker();
+
+	# $faker->addFakeData();
+
+?>
+
 <!DOCTYPE html>
 <html lang="es-mx">
 	<head>
