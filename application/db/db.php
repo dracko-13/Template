@@ -8,7 +8,7 @@
 
 		public function MariaDB() {
 			return new Medoo([
-				'type'      => 'mysql',
+				'type'      => 'mariadb',
 				'host'      => 'localhost',
 				'database'  => 'informatica_db',
 				'username'  => 'alumno',
@@ -26,8 +26,15 @@
 				],
 
 				'command'   => [
-					'SET SQL_MODE=ANSI_QUOTES'
+					'SET SQL_MODE = ANSI_QUOTES'
 				]
+			]);
+		}
+
+		public function SQLite() {
+			return new Medoo([
+				'type'     => 'sqlite',
+				'database' => $_SERVER[ 'DOCUMENT_ROOT' ] . '/db.sqlite3'
 			]);
 		}
 
