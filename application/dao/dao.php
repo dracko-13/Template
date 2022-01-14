@@ -1,10 +1,9 @@
 <?php
 
-	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/application/servers/mariadb.php' );
-	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/application/sqlite/sqlite.php' );
-	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/application/constants/queries.php' );
-	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/application/helpers/faker.php' );
-	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/application/helpers/logs.php' );
+	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/app/db/db.php' );
+	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/app/constants/queries.php' );
+	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/app/helpers/faker.php' );
+	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/app/helpers/logs.php' );
 
 	class DAO {
 
