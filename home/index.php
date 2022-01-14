@@ -28,8 +28,6 @@
 
 			<?php
 
-				echo time();
-
 				d( $_SESSION );
 
 			?>
