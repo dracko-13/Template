@@ -1,5 +1,5 @@
 ﻿$(function() {
-	test_connection_db();
+	// test_connection_db();
 });
 
 var test_connection_db = () => {

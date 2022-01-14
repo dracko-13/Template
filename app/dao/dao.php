@@ -15,7 +15,7 @@
 
 		public function __construct() {
 			$this->mariadb = new MariaDB();
-			$this->sqlite = new SQLite();
+			$this->sqlite  = new SQLite();
 		}
 
 		public function test_connection_db() {

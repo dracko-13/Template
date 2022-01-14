@@ -2,8 +2,8 @@
 
 	session_start();
 
-	$_SESSION['token'] = bin2hex(random_bytes(32));
-	$_SESSION['token-expire'] = time() * 3600;
+	$_SESSION[ 'token' ]        = bin2hex( random_bytes( 32 ) );
+	$_SESSION[ 'token-expire' ] = time() * 7200;
 
 ?>
 
@@ -21,7 +21,7 @@
 
 			<div class="container px-2 py-2">
 				<form action="app/controllers/account.controller.php?choice=login" method="post">
-					<input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
+					<input type="hidden" name="token" value="<?= $_SESSION[ 'token' ] ?>">
 					<div class="mb-2">
 						<div class="input-group">
 							<div class="input-group-prepend">
