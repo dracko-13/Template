@@ -7,8 +7,8 @@
 
 	class DAO {
 
-		private $mariadb;
-		private $sqlite;
+		private $mariadb = NULL;
+		private $sqlite  = NULL;
 
 		private $rows = [];
 		private $data = [];

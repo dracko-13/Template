@@ -1,6 +1,6 @@
 <?php
 
-	session_start();
+	SESSION_START();
 
 	$_SESSION[ 'token' ]        = bin2hex( random_bytes( 32 ) );
 	$_SESSION[ 'token-expire' ] = time() * 7200;

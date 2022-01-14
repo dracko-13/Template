@@ -5,9 +5,9 @@
 
 	class MariaDB {
 
-		private $dsn;
+		private $dsn     = '';
 		private $options = [];
-		public $link;
+		public $link     = NULL;
 
 		public function open() {
 			$this->dsn = sprintf( "mysql:host=%s;dbname=%s;charset=%s;port=%s", HOST, DATABASE, CHARSET, PORT );
@@ -35,9 +35,9 @@
 
 	class SQLite {
 
-		private $dsn;
+		private $dsn     = '';
 		private $options = [];
-		public $link;
+		public $link     = NULL;
 
 		public function open() {
 			$this->dsn = 'sqlite:' . $_SERVER[ 'DOCUMENT_ROOT' ] . 'db.sqlite3';

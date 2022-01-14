@@ -10,8 +10,15 @@
 
 		case 'login':
 
+			SESSION_START();
+
 			$nickname   = $_POST[ 'nickname' ];
 			$secret_key = $_POST[ 'secret_key' ];
+
+			$_SESSION[ 'user_data' ] = array(
+				'nickname'   => $nickname,
+				'secret_key' => $secret_key
+			);
 
 			if( $nickname == 'admin' && $secret_key == 'admin' ):
 				header( 'Location: /home/' );

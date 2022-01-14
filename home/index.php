@@ -1,14 +1,14 @@
 <?php
 
-	session_start();
+	SESSION_START();
 
 	if( !isset( $_SESSION[ 'token' ] ) ):
 		header( 'Location: /' );
-	elseif( $_POST[ 'token' ] == $_SESSION[ 'token' ] ):
-		if( time() >= $_SESSION[ 'token-expire' ] ):
-			echo 'La sesión a expirado!';
-		endif;
+	elseif( time() >= $_SESSION[ 'token-expire' ] ):
+		echo 'La sesión a expirado!';
 	endif;
+
+	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/vendor/autoload.php' );
 
 ?>
 
@@ -26,8 +26,13 @@
 
 			<a href="/app/controllers/account.controller.php?choice=logout">Logout</a>
 
-			<p><?= $_SESSION[ 'token' ] ?></p>
-			<p><?= $_SESSION[ 'token-expire' ] ?></p>
+			<?php
+
+				echo time();
+
+				d( $_SESSION );
+
+			?>
 
 			<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

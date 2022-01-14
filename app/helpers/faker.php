@@ -6,20 +6,20 @@
 
 	class HelperFaker {
 
-		private $mariadb;
-		private $sqlite;
-
-		private $faker;
+		private $mariadb = NULL;
+		private $sqlite  = NULL;
 
 		private $rows = [];
 		private $data = [];
 
 		private const QUERY = 'INSERT INTO personas VALUES(null, ?, ?, ?, ?, ?, ?)';
 
+		private $faker = NULL;
+
 		function __construct() {
 			$this->mariadb = new MariaDB();
-			$this->sqlite = new SQLite();
-			$this->faker = Faker\Factory::create();
+			$this->sqlite  = new SQLite();
+			$this->faker   = Faker\Factory::create();
 		}
 
 		function generateFakeData() {
