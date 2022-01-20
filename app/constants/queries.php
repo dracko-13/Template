@@ -2,4 +2,4 @@
 
 	# defined( '' ) || define( '', '' );
 
-	defined( 'SHOW_DATABASES' ) || define( 'SHOW_DATABASES', 'SHOW DATABASES' );
+	defined( 'SHOW_TABLES' ) || define( 'SHOW_TABLES', 'SHOW TABLES' );

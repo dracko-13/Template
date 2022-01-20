@@ -18,12 +18,12 @@
 			$this->sqlite  = new SQLite();
 		}
 
-		public function test_connection_db() {
+		public function show_tables() {
 			try {
-				$stmt = $this->mariadb->open()->prepare( SHOW_DATABASES );
+				$stmt = $this->mariadb->open()->prepare( SHOW_TABLES );
 				$stmt->execute();
 				while ( $this->rows = $stmt->fetch( PDO::FETCH_ASSOC ) ):
-					$this->data = $this->rows;
+					$this->data[] = $this->rows;
 				endwhile;
 				echo json_encode( $this->data );
 			} catch( PDOException $e ) {

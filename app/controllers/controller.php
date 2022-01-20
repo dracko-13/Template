@@ -8,8 +8,8 @@
 
 	switch ( $choice ):
 
-		case 'test_connection_db':
-			return $dao->test_connection_db();
+		case 'show_tables':
+			return $dao->show_tables();
 		break;
 
 		default:
