@@ -1,7 +1,4 @@
-CREATE DATABASE `informatica_db`;
-CREATE USER 'alumno'@'%' IDENTIFIED BY 'alumno';
-GRANT ALL PRIVILEGES ON `informatica_db`.* TO 'alumno'@'%' IDENTIFIED BY 'alumno';
-FLUSH PRIVILEGES;
+CREATE DATABASE `informatica_6`;
 
 CREATE TABLE personas (
 	id_persona       TINYINT     NOT NULL AUTO_INCREMENT PRIMARY KEY,
