@@ -3,7 +3,7 @@ $(function() {
 });
 
 function show_tables() {
-	$.get('http://localhost:8080/app/controllers/controller.php?choice=show_tables', function(response) {
+	$.get('https://localhost/app/controllers/controller.php?choice=show_tables', function(response) {
 		console.table(response);
 	}, 'json')
 }
