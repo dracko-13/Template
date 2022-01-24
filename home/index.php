@@ -2,9 +2,9 @@
 
 	SESSION_START();
 
-	if( !isset( $_SESSION [ 'csrf' ] [ 'token' ] ) ):
+	if( !isset( $_SESSION[ 'csrf' ][ 'token' ] ) ):
 		header( 'Location: /' );
-	elseif( time() >= $_SESSION [ 'csrf' ] [ 'token-expire' ] ):
+	elseif( time() >= $_SESSION[ 'csrf' ][ 'token-expire' ] ):
 		echo 'La sesión a expirado!';
 	endif;
 
