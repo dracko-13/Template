@@ -2,8 +2,10 @@
 
 	SESSION_START();
 
-	$_SESSION[ 'token' ]        = bin2hex( random_bytes( 32 ) );
-	$_SESSION[ 'token-expire' ] = time() * 7200;
+	$_SESSION[ 'csrf' ] = array(
+		'token'  => bin2hex( random_bytes( 32 ) ),
+		'token-expire' => time() * 7200
+	);
 
 ?>
 
