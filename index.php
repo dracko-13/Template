@@ -15,7 +15,7 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-toast-plugin@1.3.2/src/jquery.toast.css">
 		<link rel="stylesheet" type="text/css" href="dist/css/main.css">
-		<link rel="icon" type="image/png" href="favicon.png">
+		<link rel="icon" type="image/ico" href="favicon.ico">
 		<title>Inicio</title>
 	</head>
 		<body>
