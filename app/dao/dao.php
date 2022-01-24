@@ -18,22 +18,4 @@
 			$this->sqlite  = new SQLite();
 		}
 
-		public function show_tables() {
-			try {
-				$stmt = $this->mariadb->open()->prepare( SHOW_TABLES );
-				$stmt->execute();
-				while ( $this->rows = $stmt->fetch( PDO::FETCH_ASSOC ) ):
-					$this->data[] = $this->rows;
-				endwhile;
-				echo json_encode( $this->data );
-			} catch( PDOException $e ) {
-				make_log( __CLASS__, __FUNCTION__, $e->getMessage() );
-			} finally {
-				$stmt = NULL;
-				$this->mariadb->close();
-				unset( $this->data );
-				unset( $this->rows );
-			}
-		}
-
 	}
