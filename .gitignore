@@ -1,2 +1,3 @@
 logger/*.log
 vendor
+composer.lock
