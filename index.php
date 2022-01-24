@@ -1,11 +1,17 @@
 <?php
 
+	date_default_timezone_set("America/Mexico_City");
+
 	SESSION_START();
 
 	$_SESSION[ 'csrf' ] = array(
-		'token'  => bin2hex( random_bytes( 32 ) ),
-		'token-expire' => time() * 7200
+		'token'        => bin2hex( random_bytes( 32 ) ),
+		'token-expire' => time() + (60 * 15)
 	);
+
+	if( time() >= $_SESSION[ 'csrf' ][ 'token-expire' ] ):
+		echo 'La sesión a expirado!';
+	endif;
 
 ?>
 
@@ -24,7 +30,7 @@
 
 			<div class="container px-2 py-2">
 				<form action="app/controllers/account.controller.php?choice=login" method="post">
-					<input type="hidden" name="token" value="<?= $_SESSION[ 'token' ] ?>">
+					<input type="hidden" name="csrf-token" value="<?= $_SESSION[ 'csrf' ][ 'token' ] ?>">
 					<div class="mb-2">
 						<div class="input-group">
 							<div class="input-group-prepend">

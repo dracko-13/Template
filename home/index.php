@@ -2,10 +2,12 @@
 
 	SESSION_START();
 
-	if( !isset( $_SESSION[ 'csrf' ][ 'token' ] ) ):
+	if( !isset( $_SESSION[ 'csrf' ][ 'token' ] ) && !isset( $_SESSION[ 'user_data' ][ 'nickname' ] ) && !isset( $_SESSION[ 'user_data' ][ 'secret_key' ] ) ):
 		header( 'Location: /' );
 	elseif( time() >= $_SESSION[ 'csrf' ][ 'token-expire' ] ):
 		echo 'La sesión a expirado!';
+		SESSION_DESTROY();
+		header( 'Location: /' );
 	endif;
 
 	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/vendor/autoload.php' );
@@ -24,7 +26,7 @@
 	</head>
 		<body>
 
-			<a href="/app/controllers/account.controller.php?choice=logout">Logout</a>
+			<a href="/app/controllers/account.controller.php?choice=<?= $_SESSION[ 'csrf' ][ 'token' ] ?>">Logout</a>
 
 			<?php
 

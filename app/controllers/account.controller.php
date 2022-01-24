@@ -10,10 +10,11 @@
 
 		case 'login':
 
-			SESSION_START();
-
 			$nickname   = $_POST[ 'nickname' ];
 			$secret_key = $_POST[ 'secret_key' ];
+			$csrf_token = $_POST[ 'crsf-token' ];
+
+			SESSION_START();
 
 			$_SESSION[ 'user_data' ] = array(
 				'nickname'   => $nickname,
@@ -26,9 +27,7 @@
 
 		break;
 
-		case 'logout':
-			SESSION_START();
-			SESSION_UNSET();
+		case $_SESSION[ 'csrf' ][ 'token' ]:
 			SESSION_DESTROY();
 			header( 'Location: /' );
 		break;
