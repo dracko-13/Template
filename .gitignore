@@ -1,5 +1,4 @@
 logger/*.log
 vendor
 composer.lock
-access.log
 error.log
