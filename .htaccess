@@ -5,5 +5,8 @@
 	RewriteRule ^(.*)$ index.php/$1 [L]
 	RewriteRule ^app/?$ - [F,L]
 	RewriteRule ^dist/?$ - [F,L]
+	RewriteRule ^home/?$ - [F,L]
+	RewriteRule ^logger/?$ - [F,L]
 	RewriteRule ^plugins/?$ - [F,L]
+	RewriteRule ^vendor/?$ - [F,L]
 </IfModule>
