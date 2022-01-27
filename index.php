@@ -9,9 +9,15 @@
 		'token-expire' => time() + (60 * 15)
 	);
 
-	if( time() >= $_SESSION[ 'csrf' ][ 'token-expire' ] ):
-		echo 'La sesión a expirado!';
+	if( isset( $_SESSION[ 'user_data' ] ) ):
+		header( 'Location: /home/' );
 	endif;
+
+	if( time() >= $_SESSION[ 'csrf' ][ 'token-expire' ] ):
+		echo 'La sesión a expirado! <a href="/" target="self">Ir a inicio</a>';
+	endif;
+
+	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/vendor/autoload.php' );
 
 ?>
 

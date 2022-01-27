@@ -12,22 +12,29 @@
 
 			$nickname   = $_POST[ 'nickname' ];
 			$secret_key = $_POST[ 'secret_key' ];
-			$csrf_token = $_POST[ 'crsf-token' ];
+			$csrf_token = $_POST[ 'csrf-token' ];
 
-			SESSION_START();
+			if( !isset( $csrf_token ) && $csrf_token != $_SESSION[ 'csrf' ][ 'token' ] ):
+				header( 'Location: /' );
+			else:
 
-			$_SESSION[ 'user_data' ] = array(
-				'nickname'   => $nickname,
-				'secret_key' => $secret_key
-			);
+				SESSION_START();
 
-			if( $nickname == 'admin' && $secret_key == 'admin' ):
-				header( 'Location: /home/' );
+				$_SESSION[ 'user_data' ] = array(
+					'nickname'   => $nickname,
+					'secret_key' => $secret_key
+				);
+
+				if( $nickname == 'admin' && $secret_key == 'admin' ):
+					header( 'Location: /home/' );
+				endif;
+
 			endif;
 
 		break;
 
-		case $_SESSION[ 'csrf' ][ 'token' ]:
+		case 'logout':
+			SESSION_START();
 			SESSION_DESTROY();
 			header( 'Location: /' );
 		break;
