@@ -1,8 +1,8 @@
 <?php
 
-	defined( 'HOST'     ) || define( 'HOST',     getenv( 'HOST'             ) );
-	defined( 'DATABASE' ) || define( 'DATABASE', getenv( 'DB'               ) );
-	defined( 'CHARSET'  ) || define( 'CHARSET',  getenv( 'CHARSET'          ) );
-	defined( 'PORT'     ) || define( 'PORT',     getenv( 'PORT'             ) );
-	defined( 'USERNAME' ) || define( 'USERNAME', getenv( 'USER_DB'          ) );
-	defined( 'PASSWORD' ) || define( 'PASSWORD', getenv( 'PASSWORD_USER_DB' ) );
+	defined( 'HOST'     ) || define( 'HOST',     'localhost'     );
+	defined( 'DATABASE' ) || define( 'DATABASE', 'informatica_6' );
+	defined( 'CHARSET'  ) || define( 'CHARSET',  'utf8'          );
+	defined( 'PORT'     ) || define( 'PORT',     3306            );
+	defined( 'USERNAME' ) || define( 'USERNAME', 'macaco'        );
+	defined( 'PASSWORD' ) || define( 'PASSWORD', 'macaco'        );
