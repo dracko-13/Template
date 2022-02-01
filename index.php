@@ -47,12 +47,12 @@
 				<form action="app/controllers/account.controller.php?choice=login" method="post">
 					<input type="hidden" name="csrf-token" value="<?= $_SESSION[ 'csrf' ][ 'token' ] ?>">
 					<div class="form-floating mb-2">
-						<input type="text" class="form-control" id="nickname" name="nickname">
+						<input type="text" class="form-control" id="nickname" name="nickname" placeholder="Nickname">
 						<label for="nickname">Nickname</label>
 					</div>
 					<div class="form-floating mb-2">
-						<input class="form-control" type="password" id="secret_key" name="secret_key">
-						<label for="secret_key">***</label>
+						<input class="form-control" type="password" id="secret_key" name="secret_key" placeholder="******">
+						<label for="secret_key">******</label>
 					</div>
 					<button type="submit" class="btn btn-outline-secondary">Acceder</button>
 				</form>
