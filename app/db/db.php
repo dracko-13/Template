@@ -1,65 +1,41 @@
 <?php
 
-	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/app/constants/authentication.php' );
-	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/app/helpers/logs.php' );
+	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/vendor/autoload.php' );
 
-	class MariaDB {
+	use Medoo\Medoo;
 
-		private $dsn     = '';
-		private $options = [];
-		public $link     = NULL;
+	class Databases {
 
-		public function open() {
-			$this->dsn = sprintf( "mysql:host=%s;dbname=%s;charset=%s;port=%s", HOST, DATABASE, CHARSET, PORT );
-			$this->options = [
-				PDO::ATTR_PERSISTENT => true,
-				PDO::ATTR_ERRMODE    => PDO::ERRMODE_EXCEPTION
-			];
-			try {
-				$this->link = new PDO( $this->dsn, USERNAME, PASSWORD, $this->options );
-			} catch( PDOException $e ) {
-				make_log( __CLASS__, __FUNCTION__, $e->getMessage() );
-			}
-			return $this->link;
+		public function MariaDB() {
+			return new Medoo([
+				'type'      => 'mariadb',
+				'host'      => 'localhost',
+				'database'  => 'test',
+				'username'  => 'macaco',
+				'password'  => 'macaco',
+				'charset'   => 'utf8mb4',
+				'collation' => 'utf8mb4_general_ci',
+				'port'      => 3306,
+				'prefix'    => '',
+				'logging'   => true,
+
+				'error'     => PDO::ERRMODE_EXCEPTION,
+
+				'option'    => [
+					PDO::ATTR_CASE => PDO::CASE_NATURAL
+				],
+
+				'command'   => [
+					'SET SQL_MODE = ANSI_QUOTES'
+				]
+			]);
 		}
 
-		public function close() {
-			try {
-				$this->link = NULL;
-			} catch( PDOException $e ) {
-				make_log( __CLASS__, __FUNCTION__, $e->getMessage() );
-			}
-		}
-
-	}
-
-	class SQLite {
-
-		private $dsn     = '';
-		private $options = [];
-		public $link     = NULL;
-
-		public function open() {
-			$this->dsn = 'sqlite:' . $_SERVER[ 'DOCUMENT_ROOT' ] . 'db.sqlite3';
-			$this->options = [
-				PDO::ATTR_EMULATE_PREPARES   => false,
-				PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-				PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-			];
-			try {
-				$this->link = new PDO( $this->dsn, '', '', $this->options );
-			} catch( PDOException $e ) {
-				make_log( __CLASS__, __FUNCTION__, $e->getMessage() );
-			}
-			return $this->link;
-		}
-
-		public function close() {
-			try {
-				$this->link = NULL;
-			} catch( PDOException $e ) {
-				make_log( __CLASS__, __FUNCTION__, $e->getMessage() );
-			}
+		public function SQLite() {
+			return new Medoo([
+				'type'     => 'sqlite',
+				'database' => $_SERVER[ 'DOCUMENT_ROOT' ] . '/db.sqlite3'
+			]);
 		}
 
 	}

@@ -19,6 +19,14 @@
 
 	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/vendor/autoload.php' );
 
+	# require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/app/helpers/faker.php' );
+
+	# $faker = new HelperFaker();
+
+	# $faker->addFakeData();
+
+	# d( $faker->generateFakeData() );
+
 ?>
 
 <!DOCTYPE html>
@@ -38,21 +46,13 @@
 			<div class="container px-2 py-2">
 				<form action="app/controllers/account.controller.php?choice=login" method="post">
 					<input type="hidden" name="csrf-token" value="<?= $_SESSION[ 'csrf' ][ 'token' ] ?>">
-					<div class="mb-2">
-						<div class="input-group">
-							<div class="input-group-prepend">
-								<div class="input-group-text">@</div>
-							</div>
-							<input type="text" class="form-control" name="nickname">
-						</div>
+					<div class="form-floating mb-2">
+						<input type="text" class="form-control" id="nickname" name="nickname">
+						<label for="nickname">Nickname</label>
 					</div>
-					<div class="mb-2">
-						<div class="input-group">
-							<div class="input-group-prepend">
-								<div class="input-group-text">***</div>
-							</div>
-							<input class="form-control" type="password" name="secret_key">
-						</div>
+					<div class="form-floating mb-2">
+						<input class="form-control" type="password" id="secret_key" name="secret_key">
+						<label for="secret_key">***</label>
 					</div>
 					<button type="submit" class="btn btn-outline-secondary">Acceder</button>
 				</form>
