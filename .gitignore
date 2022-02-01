@@ -1,4 +1,0 @@
-logger/*.log
-vendor
-composer.lock
-error.log
