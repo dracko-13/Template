@@ -19,14 +19,6 @@
 
 	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/vendor/autoload.php' );
 
-	# require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/app/helpers/faker.php' );
-
-	# $faker = new HelperFaker();
-
-	# $faker->addFakeData();
-
-	# d( $faker->generateFakeData() );
-
 ?>
 
 <!DOCTYPE html>

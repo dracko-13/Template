@@ -3,6 +3,7 @@
         "monolog/monolog": "^2.3",
         "kint-php/kint": "^3.3",
         "fakerphp/faker": "^1.17",
-        "catfan/medoo": "^2.1"
+        "catfan/medoo": "^2.1",
+        "vlucas/phpdotenv": "^5.4"
     }
 }

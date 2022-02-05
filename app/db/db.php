@@ -2,6 +2,10 @@
 
 	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/vendor/autoload.php' );
 
+	$dotenv = Dotenv\Dotenv::createImmutable( $_SERVER[ 'DOCUMENT_ROOT' ] . '/' );
+
+	$dotenv->load();
+
 	use Medoo\Medoo;
 
 	class Databases {
@@ -10,9 +14,9 @@
 			return new Medoo([
 				'type'      => 'mariadb',
 				'host'      => 'localhost',
-				'database'  => 'test',
-				'username'  => 'macaco',
-				'password'  => 'macaco',
+				'database'  => $_ENV[ 'DATABASE' ],
+				'username'  => $_ENV[ 'USER_DB' ],
+				'password'  => $_ENV[ 'USER_PASSWD' ],
 				'charset'   => 'utf8mb4',
 				'collation' => 'utf8mb4_general_ci',
 				'port'      => 3306,
