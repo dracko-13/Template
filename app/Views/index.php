@@ -34,7 +34,9 @@
 				</div>
 			</div>
 			<input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>">
-			<button type="submit" class="btn btn-outline-secondary"><i class="bi bi-box-arrow-in-right"></i> Login</button>
+			<div class="d-grid gap-2">
+				<button type="submit" class="btn btn-outline-secondary"><i class="bi bi-box-arrow-in-right"></i> Login</button>
+			</div>	
 		</form>
 	</div>
 <?= $this->endSection() ?>

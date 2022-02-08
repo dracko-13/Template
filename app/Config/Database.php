@@ -23,7 +23,7 @@ class Database extends Config
      *
      * @var string
      */
-    public $defaultGroup = 'ser';
+    public $defaultGroup = 'default';
 
     /**
      * The default database connection.

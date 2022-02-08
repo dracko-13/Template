@@ -7,7 +7,6 @@ class Index extends BaseController
 
 	public function index()
 	{	
-		# addFakeData();
 		if($this->session->id_account && $this->session->nickname):
 			return redirect()->to(site_url('/home'));
 		else:

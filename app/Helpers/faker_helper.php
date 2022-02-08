@@ -1,10 +1,12 @@
 <?php
 
-	function addFakeData()
-	{
-		$db_accounts = \Config\Database::connect('default');
+use Faker\Factory;
 
-		$faker = \Faker\Factory::create('es_ES');
+function addFakeData()
+{
+	$db = \Config\Database::connect('default');
 
-		d($faker);
-	}
+	$faker = Factory::create('es_ES');
+
+	d($faker);
+}

@@ -23,7 +23,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $baseURL = 'http://test.local/';
+    public $baseURL = 'http://localhost:8080/';
 
     /**
      * --------------------------------------------------------------------------
@@ -394,7 +394,7 @@ class App extends BaseConfig
      *
      * @var int
      */
-    public $CSRFExpire = 300;
+    public $CSRFExpire = 7200;
 
     /**
      * --------------------------------------------------------------------------
