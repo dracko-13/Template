@@ -2,11 +2,9 @@
 
 namespace App\Controllers;
 
-class Index extends BaseController
-{
+class Index extends BaseController {
 
-	public function index()
-	{	
+	public function index()	{	
 		if($this->session->id_account && $this->session->nickname):
 			return redirect()->to(site_url('/home'));
 		else:
@@ -18,8 +16,7 @@ class Index extends BaseController
 		endif;
 	}
 
-	public function login()
-	{
+	public function login() {
 		$nickname = $this->request->getPost('nickname');
 		$secret_key = $this->request->getPost('secret_key');
 
@@ -27,7 +24,6 @@ class Index extends BaseController
 
 		if(!empty($data)):
 			if(password_verify($secret_key, $data->secret_key)):
-
 				$this->account->updateSecretKey($data->id_account, $secret_key);
 
 				$this->session->set('nickname', $nickname);
@@ -42,8 +38,7 @@ class Index extends BaseController
 		endif;
 	}
 
-	public function logout()
-	{
+	public function logout() {
 		$this->session->remove(['id_account', 'nickname']);
 		$this->session->stop();
 		$this->session->destroy();

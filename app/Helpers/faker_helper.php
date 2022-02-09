@@ -2,8 +2,7 @@
 
 use Faker\Factory;
 
-function addFakeData()
-{
+function addFakeData() {
 	$db = \Config\Database::connect('default');
 
 	$faker = Factory::create('es_ES');
