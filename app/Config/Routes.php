@@ -20,7 +20,7 @@ $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Index');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
-$routes->set404Override(function(){
+$routes->set404Override(function() {
 	return view('errors/404.php');
 });
 $routes->setAutoRoute(true);
