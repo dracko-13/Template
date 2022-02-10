@@ -35,7 +35,7 @@ class BaseController extends Controller
      *
      * @var array
      */
-    protected $helpers = ['faker', 'form', 'html', 'text', 'url'];
+    protected $helpers = ['faker', 'html'];
 
     /**
      * Constructor.
@@ -48,7 +48,8 @@ class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = \Config\Services::session();
- 		$this->account = model('Account');
+
+		$this->account = model('Account');
 
 		$this->request  = \Config\Services::request();
 		$this->session  = \Config\Services::session();

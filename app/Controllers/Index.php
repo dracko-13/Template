@@ -4,16 +4,17 @@ namespace App\Controllers;
 
 class Index extends BaseController {
 
-	public function index()	{	
-		if($this->session->id_account && $this->session->nickname):
-			return redirect()->to(site_url('/home'));
-		else:
-			$data = [
-				'title' => 'CI4',
-				'app_name' => 'CI4 - Inicio',
-			];
-			return view('index', $data);
-		endif;
+	public function index()	{
+		print_r($this->account->getData('admin'));
+		// if($this->session->id_account && $this->session->nickname):
+		// 	return redirect()->to(site_url('/home'));
+		// else:
+		// 	$data = [
+		// 		'title' => 'CI4',
+		// 		'app_name' => 'CI4 - Inicio',
+		// 	];
+		// 	return view('index', $data);
+		// endif;
 	}
 
 	public function login() {

@@ -6,14 +6,22 @@ use CodeIgniter\Model;
 
 class Account extends Model {
 
-	protected $DBGroup = 'default';
+	protected $table         = 'accounts';
+	protected $primaryKey    = 'id_account';
+	protected $returnType    = 'object';
+
+	protected $allowedFields = [
+		'nickname',
+		'secret_key'
+	];
 
 	public function getData($nickname) {
-		return $this->db->table('accounts')->getWhere(['nickname' => $nickname])->getRow();
+		 $this->where('nickname', $nickname);
+		return $this->getLastQuery();
 	}
 
 	public function updateSecretKey($id_account, $secret_key) {
-		$this->db->table('accounts')->where(['id_account' => $id_account])->set(['secret_key' => password_hash($secret_key, PASSWORD_DEFAULT)])->update();
+		$this->set('secret_key', password_hash($secret_key, PASSWORD_DEFAULT))->where('id_account', $id_account)->update();
 	}
 
 }
