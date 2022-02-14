@@ -9,8 +9,8 @@ class Index extends BaseController {
 			return redirect()->to(site_url('/home'));
 		else:
 			$data = [
-				'title'    => 'CI4',
-				'app_name' => 'CI4 - Inicio',
+				'title'    => 'Inicio',
+				'app_name' => 'CI4 - Test',
 			];
 			return view('index', $data);
 		endif;

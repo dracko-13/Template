@@ -12,7 +12,9 @@
         "ext-mbstring": "*",
         "kint-php/kint": "^4.0",
         "laminas/laminas-escaper": "^2.9",
-        "psr/log": "^1.1"
+        "psr/log": "^1.1",
+        "catfan/medoo": "^2.1",
+        "fpdf/fpdf": "^1.83"
     },
     "require-dev": {
         "codeigniter/coding-standard": "^1.1",
