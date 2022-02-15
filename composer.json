@@ -4,6 +4,7 @@
         "kint-php/kint": "^3.3",
         "fakerphp/faker": "^1.17",
         "catfan/medoo": "^2.1",
-        "vlucas/phpdotenv": "^5.4"
+        "vlucas/phpdotenv": "^5.4",
+        "fpdf/fpdf": "^1.83"
     }
 }
