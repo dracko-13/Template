@@ -1,8 +1,7 @@
 <?php
 
 	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/app/db/db.php' );
-	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/app/helpers/faker.php' );
-	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/app/helpers/logs.php' );
+	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/app/helpers/logger.php' );
 
 	class DAO {
 

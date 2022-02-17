@@ -1,3 +1,12 @@
+<?php
+
+	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/app/helpers/faker.php' );
+	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/vendor/autoload.php' );
+
+	addFakeData();
+
+?>
+
 <!DOCTYPE html>
 <html lang="es-mx">
 	<head>
