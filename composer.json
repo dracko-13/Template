@@ -7,6 +7,7 @@
         "vlucas/phpdotenv": "^5.4"
     },
     "require-dev": {
-        "mmo/faker-images": "^0.6.0"
+        "mmo/faker-images": "^0.6.0",
+        "fpdf/fpdf": "^1.83"
     }
 }
