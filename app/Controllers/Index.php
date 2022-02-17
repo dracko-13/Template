@@ -7,11 +7,9 @@ use Tatter\Imposter\Entities\User;
 class Index extends BaseController {
 
 	public function index()	{
-		if($this->auth->id()/*$this->session->id_account && $this->session->nickname*/):
+		if($this->auth->id()):
 			return redirect()->to(site_url('/home'));
 		else:
-			d(new User());
-			d($this->auth);
 			$data = [
 				'title'    => 'Inicio',
 				'app_name' => 'CI4 - Test',
@@ -29,9 +27,6 @@ class Index extends BaseController {
 		if(!empty($data)):
 			if(password_verify($secret_key, $data->secret_key)):
 				$this->account->updateSecretKey($data->id_account, $secret_key);
-
-				// $this->session->set('nickname', $nickname);
-				// $this->session->set('id_account', $data->id_account);
 
 				$user = new User();
 
@@ -52,9 +47,6 @@ class Index extends BaseController {
 
 	public function logout() {
 		service('auth')->logout();
-		// $this->session->remove(['id_account', 'nickname']);
-		// $this->session->stop();
-		// $this->session->destroy();
 		return redirect()->to(site_url('/'));
 	}
 
