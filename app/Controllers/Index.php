@@ -2,12 +2,16 @@
 
 namespace App\Controllers;
 
+use Tatter\Imposter\Entities\User;
+
 class Index extends BaseController {
 
 	public function index()	{
-		if($this->session->id_account && $this->session->nickname):
+		if($this->auth->id()/*$this->session->id_account && $this->session->nickname*/):
 			return redirect()->to(site_url('/home'));
 		else:
+			d(new User());
+			d($this->auth);
 			$data = [
 				'title'    => 'Inicio',
 				'app_name' => 'CI4 - Test',
@@ -26,8 +30,16 @@ class Index extends BaseController {
 			if(password_verify($secret_key, $data->secret_key)):
 				$this->account->updateSecretKey($data->id_account, $secret_key);
 
-				$this->session->set('nickname', $nickname);
-				$this->session->set('id_account', $data->id_account);
+				// $this->session->set('nickname', $nickname);
+				// $this->session->set('id_account', $data->id_account);
+
+				$user = new User();
+
+				$user->id          = $data->id_account;
+				$user->groups      = ['Administrators'];
+				$user->permissions = ['total'];
+
+				$this->auth->login($user);
 
 				return redirect()->to(site_url('/home'));
 			else:
@@ -39,9 +51,10 @@ class Index extends BaseController {
 	}
 
 	public function logout() {
-		$this->session->remove(['id_account', 'nickname']);
-		$this->session->stop();
-		$this->session->destroy();
+		service('auth')->logout();
+		// $this->session->remove(['id_account', 'nickname']);
+		// $this->session->stop();
+		// $this->session->destroy();
 		return redirect()->to(site_url('/'));
 	}
 

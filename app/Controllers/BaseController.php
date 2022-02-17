@@ -51,6 +51,8 @@ class BaseController extends Controller
 
 		$this->account = model('Account');
 
+        $this->auth = service('auth');
+
 		$this->request  = \Config\Services::request();
 		$this->session  = \Config\Services::session();
 		$this->response = \Config\Services::response();
