@@ -5,5 +5,8 @@
         "fakerphp/faker": "^1.17",
         "catfan/medoo": "^2.1",
         "vlucas/phpdotenv": "^5.4"
+    },
+    "require-dev": {
+        "mmo/faker-images": "^0.6.0"
     }
 }

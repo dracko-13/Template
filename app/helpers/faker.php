@@ -8,6 +8,9 @@
 
 	function generateFakeData() {
 		$faker = Factory::create('es_ES');
+
+		$faker->addProvider(new \Mmo\Faker\LoremSpaceProvider($faker));
+
 	}
 
 	function addFakeData() {
@@ -16,6 +19,6 @@
 		// try {
 		// 	$db->MariaDB()->
 		// } catch(PDOException $e) {
-		// 	make_log( 'error', __FUNCTION__ , "\n" . $e->getMessage() );
+		// 	make_log( 'error', __FUNCTION__ , $e->getMessage() );
 		// }
 	}
