@@ -15,10 +15,4 @@
 
 	function addFakeData() {
 		$db = new Databases();
-
-		// try {
-		// 	$db->MariaDB()->
-		// } catch(PDOException $e) {
-		// 	make_log( 'error', __FUNCTION__ , $e->getMessage() );
-		// }
 	}
