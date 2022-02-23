@@ -4,6 +4,7 @@ use Medoo\Medoo;
 
 function customDB($db, $user, $password, $type) {
 	switch($type):
+
 		case 'mariadb':
 			return new Medoo([
 				'type'      => 'mariadb',
@@ -28,11 +29,13 @@ function customDB($db, $user, $password, $type) {
 				]
 			]);
 		break;
+
 		case 'sqlite':
 			return new Medoo([
 				'type'     => 'sqlite',
 				'database' => $_SERVER[ 'DOCUMENT_ROOT' ] . '/writable/db.sqlite3'
 			]);
 		break;
+
 	endswitch;
 }
