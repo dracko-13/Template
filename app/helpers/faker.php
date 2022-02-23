@@ -7,18 +7,18 @@
 	use Faker\Factory;
 
 	function generateFakeData() {
-		$faker = Factory::create('es_ES');
+		$faker = Factory::create( 'es_ES' );
 
-		$faker->addProvider(new \Mmo\Faker\LoremSpaceProvider($faker));
+		$faker->addProvider( new \Mmo\Faker\LoremSpaceProvider( $faker ) );
 
-		$imageUrl = $faker->loremSpaceUrl(\Mmo\Faker\LoremSpaceProvider::CATEGORY_FACE);
+		$imageUrl = $faker->loremSpaceUrl( \Mmo\Faker\LoremSpaceProvider::CATEGORY_FACE );
 	}
 
 	function addFakeData() {
 		$db = new Databases();
 		try {
 			return $db->MariaDB()->select();
-		} catch(PDOException $e) {
+		} catch( PDOException $e ) {
 			make_log( 'error', __FUNCTION__ , $e->getMessage() );
 		}
 	}

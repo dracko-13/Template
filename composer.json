@@ -1,11 +1,11 @@
 {
     "require": {
-        "monolog/monolog": "^2.3",
-        "kint-php/kint": "^3.3",
-        "fakerphp/faker": "^1.17",
         "catfan/medoo": "^2.1",
-        "vlucas/phpdotenv": "^5.4",
-        "setasign/fpdf": "^1.8",
-        "mmo/faker-images": "^0.6.0"
+        "fakerphp/faker": "^1.17",
+        "fpdf/fpdf": "^1.83",
+        "kint-php/kint": "^3.3",
+        "monolog/monolog": "^2.3",
+        "mmo/faker-images": "^0.6.0",
+        "vlucas/phpdotenv": "^5.4"
     }
 }
