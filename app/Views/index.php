@@ -30,7 +30,6 @@
 				<button type="submit" class="btn btn-outline-secondary"><i class="bi bi-box-arrow-in-right"></i> Login</button>
 			</div>	
 		</form>
-	</div><?php d($_ENV); ?>
 <?= $this->endSection() ?>
 
 <?= $this->section('scripts') ?>

@@ -23,7 +23,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $baseURL = 'http://192.168.0.250/';
+    public $baseURL = 'http://localhost:8080/';
 
     /**
      * --------------------------------------------------------------------------
@@ -36,7 +36,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $indexPage = '';
+    public $indexPage = 'index.php';
 
     /**
      * --------------------------------------------------------------------------
@@ -69,7 +69,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $defaultLocale = 'es';
+    public $defaultLocale = 'en';
 
     /**
      * --------------------------------------------------------------------------
@@ -108,7 +108,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $appTimezone = 'America/Mexico_City';
+    public $appTimezone = 'America/Chicago';
 
     /**
      * --------------------------------------------------------------------------
@@ -151,7 +151,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $sessionDriver = 'CodeIgniter\Session\Handlers\DatabaseHandler';
+    public $sessionDriver = 'CodeIgniter\Session\Handlers\FileHandler';
 
     /**
      * --------------------------------------------------------------------------
@@ -162,7 +162,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $sessionCookieName = 'ci_session-';
+    public $sessionCookieName = 'ci_session';
 
     /**
      * --------------------------------------------------------------------------
@@ -174,7 +174,7 @@ class App extends BaseConfig
      *
      * @var int
      */
-    public $sessionExpiration = 0;
+    public $sessionExpiration = 7200;
 
     /**
      * --------------------------------------------------------------------------
@@ -193,7 +193,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $sessionSavePath = 'ci_sessions';
+    public $sessionSavePath = WRITEPATH . 'session';
 
     /**
      * --------------------------------------------------------------------------
@@ -207,7 +207,7 @@ class App extends BaseConfig
      *
      * @var bool
      */
-    public $sessionMatchIP = true;
+    public $sessionMatchIP = false;
 
     /**
      * --------------------------------------------------------------------------
