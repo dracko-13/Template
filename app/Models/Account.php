@@ -16,7 +16,7 @@ class Account extends Model {
 	];
 
 	public function getData($nickname) {
-		 return $this->getWhere(['nickname' => $nickname])->getRow();
+		return $this->getWhere(['nickname' => $nickname])->getRow();
 	}
 
 	public function updateSecretKey($id_account, $secret_key) {
