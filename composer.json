@@ -22,9 +22,6 @@
 		"phpunit/phpunit": "^9.1",
 		"predis/predis": "^1.1"
 	},
-	"suggest": {
-		"ext-fileinfo": "Improves mime type detection for files"
-	},
 	"autoload": {
 		"psr-4": {
 			"CodeIgniter\\": "system/"
@@ -32,12 +29,6 @@
 		"exclude-from-classmap": [
 			"**/Database/Migrations/**"
 		]
-	},
-	"scripts": {
-		"post-update-cmd": [
-			"CodeIgniter\\ComposerScripts::postUpdate"
-		],
-		"test": "phpunit"
 	},
 	"provide": {
 		"codeigniter4/authentication-implementation": "1.0"
