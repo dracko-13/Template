@@ -49,7 +49,8 @@ class BaseController extends Controller
 
         // E.g.: $this->session = \Config\Services::session();
 
-		$this->account = model('Account');
+		$this->account  = model('Account');
+		$this->username = model('Username');
 
         $this->auth = service('auth');
 

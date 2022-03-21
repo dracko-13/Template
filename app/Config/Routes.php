@@ -37,8 +37,12 @@ $routes->get('/', 'Index::index');
 
 $routes->post('/login', 'Index::login');
 $routes->get('/logout', 'Index::logout');
+$routes->post('/signup', 'Index::signup');
 
 $routes->get('/home', 'Home::index');
+
+$routes->post('/findUserName', 'Home::findUserName');
+$routes->post('/setUserName', 'Home::setUserName');
 
 /*
  * --------------------------------------------------------------------
