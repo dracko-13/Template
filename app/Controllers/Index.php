@@ -4,9 +4,6 @@ namespace App\Controllers;
 
 use Tatter\Imposter\Entities\User;
 
-use \PDO;
-use \PDOException;
-
 class Index extends BaseController {
 
 	public function index()	{
@@ -57,18 +54,11 @@ class Index extends BaseController {
 		$nickname   = $this->request->getPost('nickname');
 		$secret_key = $this->request->getPost('secret_key');
 
-		try {
-
-			$rows = MariaDB()->insert('accounts', [
-				'nickname'   => $nickname,
-				'secret_key' => password_hash($secret_key, PASSWORD_DEFAULT)
-			]);
-
-			echo $rows->rowCount();
-
-		} catch(PDOException $e) {
-			log_message('error', $e->getMessage());
-		}
+		if($this->account->signup($nickname, $secret_key)):
+			echo 'Usuario agragado';
+		else:
+			echo 'Error!';
+		endif;
 	}
 
 }

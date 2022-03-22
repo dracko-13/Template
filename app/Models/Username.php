@@ -19,4 +19,15 @@ class Username extends Model {
 		return $this->getWhere(['account_id' => $id_account])->getRow();
 	}
 
+	function findUserName($username) {
+		return $this->like('username', $username)->get()->getResult('array');
+	}
+
+	function setUserName($username, $id_account) {
+		return $this->insert([
+			'username'   => strtolower($username),
+			'account_id' => $id_account
+		]);
+	}
+
 }

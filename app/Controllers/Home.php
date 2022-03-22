@@ -4,9 +4,6 @@ namespace App\Controllers;
 
 use Tatter\Imposter\Entities\User;
 
-use \PDO;
-use \PDOException;
-
 class Home extends BaseController {
 
 	public function index() {
@@ -23,37 +20,33 @@ class Home extends BaseController {
 	}
 
 	function findUserName() {
-		try {
+		if($this->auth->id()):
 			$username = $_POST['username'];
 
-			$query = "SELECT * FROM usernames WHERE username LIKE '%$username%'";
-
-			$rows = MariaDB()->query( $query )->fetchAll();
+			$rows = $this->username->findUserName($username);
 
 			if( empty( $rows ) ):
 				echo '1';
 			else:
 				echo '0';
 			endif;
-		} catch(PDOException $e) {
-			log_message('error', $e->getMessage());
-		}
+		else:
+			return redirect()->to(site_url('/'));
+		endif;
 	}
 
 	function setUserName() {
-		try {
+		if($this->auth->id()):
 			$username = $_POST['username'];
 
-			$rows = MariaDB()->insert('usernames', [
-				'username'   => strtolower($username),
-				'account_id' => $this->auth->id()
-			]);
-
-			echo $rows->rowCount();
-
-		} catch(PDOException $e) {
-			log_message('error', $e->getMessage());
-		}
+			if($this->username->setUserName($username, $this->auth->id())):
+				echo '1';
+			else:
+				echo '0';
+			endif;
+		else:
+			return redirect()->to(site_url('/'));
+		endif;
 	}
 
 }

@@ -23,4 +23,11 @@ class Account extends Model {
 		$this->set('secret_key', password_hash($secret_key, PASSWORD_DEFAULT))->where('id_account', $id_account)->update();
 	}
 
+	public function signup($nickname, $secret_key) {
+		return $this->insert([
+			'nickname' => $nickname,
+			'secret_key' => password_hash($secret_key, PASSWORD_DEFAULT)
+		]);
+	}
+
 }
