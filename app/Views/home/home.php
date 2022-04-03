@@ -9,7 +9,7 @@
 	<div class="container px-2 py-2">
 
 		<?php if(isset($username)): ?>
-				<p><a href="">@</a><?= $username->username ?></p>
+				<p>@<?= $username->username ?></p>
 		<?php else: ?>
 
 			<form action="<?= site_url('/setUserName') ?>" method="post">

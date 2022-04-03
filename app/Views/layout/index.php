@@ -25,7 +25,6 @@
 
 			<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-			<script src="https://cdn.jsdelivr.net/npm/jquery-toast-plugin@1.3.2/src/jquery.toast.js"></script>
 			<?= $this->renderSection('scripts') ?>
 			<?= script_tag('dist/js/main.js') ?>
 
