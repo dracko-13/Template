@@ -24,19 +24,27 @@ class Index extends BaseController {
 
 		$data = $this->account->getData($nickname);
 
+		d($data);
+
 		if(!empty($data)):
 			if(password_verify($secret_key, $data->secret_key)):
-				$this->account->updateSecretKey($data->id_account, $secret_key);
+				// $this->account->updateSecretKey($data->_id, $secret_key);
 
 				$user = new User();
 
-				$user->id          = $data->id_account;
+				$user->id          = $data->_id;
 				$user->groups      = ['Administrators'];
 				$user->permissions = ['total'];
 
 				$this->auth->login($user);
 
-				return redirect()->to(site_url('/home'));
+				echo $data->_id;
+
+				echo '<br>';
+
+				d($user);
+
+				// return redirect()->to(site_url('/home'));
 			else:
 				return redirect()->to(site_url('/'));
 			endif;

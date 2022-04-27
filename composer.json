@@ -8,11 +8,11 @@
 		"kint-php/kint": "^4.0",
 		"laminas/laminas-escaper": "^2.9",
 		"psr/log": "^1.1",
-		"catfan/medoo": "^2.1",
 		"fakerphp/faker": "^1.19",
 		"fpdf/fpdf": "^1.83",
 		"mmo/faker-images": "^0.6.0",
-		"tatter/imposter": "^1.1"
+		"tatter/imposter": "^1.1",
+		"mongodb/mongodb": "^1.12"
 	},
 	"require-dev": {
 		"codeigniter/coding-standard": "^1.1",
