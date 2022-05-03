@@ -12,7 +12,8 @@
 		"fpdf/fpdf": "^1.83",
 		"mmo/faker-images": "^0.6.0",
 		"tatter/imposter": "^1.1",
-		"mongodb/mongodb": "^1.12"
+		"mongodb/mongodb": "^1.12",
+		"ramsey/uuid": "^4.2"
 	},
 	"require-dev": {
 		"codeigniter/coding-standard": "^1.1",

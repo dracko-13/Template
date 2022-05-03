@@ -2,32 +2,24 @@
 
 namespace App\Models;
 
-use CodeIgniter\Model;
+use MongoDB\Client;
 
-class Username extends Model {
+class Username {
 
-	protected $table         = 'usernames';
-	protected $primaryKey    = 'id_username';
-	protected $returnType    = 'object';
+	private $db = NULL;
 
-	protected $allowedFields = [
-		'username',
-		'account_id'
-	];
+	public function __construct() {
+		$dns = sprintf("mongodb://%s:%s@%s:%s", getenv('user_mdb'), getenv('passwd_user_mdb'), getenv('host_mdb'), getenv('port_mdb'));
+		$this->db = new Client($dns);
+	}
 
-	public function getUserName($id_account) {
-		return $this->getWhere(['account_id' => $id_account])->getRow();
+	public function getUserName($uuid) {
 	}
 
 	function findUserName($username) {
-		return $this->like('username', $username)->get()->getResult('array');
 	}
 
 	function setUserName($username, $id_account) {
-		return $this->insert([
-			'username'   => strtolower($username),
-			'account_id' => $id_account
-		]);
 	}
 
 }

@@ -24,27 +24,19 @@ class Index extends BaseController {
 
 		$data = $this->account->getData($nickname);
 
-		d($data);
-
 		if(!empty($data)):
 			if(password_verify($secret_key, $data->secret_key)):
-				// $this->account->updateSecretKey($data->_id, $secret_key);
+				$this->account->updateSecretKey($data->uuid, $secret_key);
 
 				$user = new User();
 
-				$user->id          = $data->_id;
+				$user->id          = $data->uuid;
 				$user->groups      = ['Administrators'];
 				$user->permissions = ['total'];
 
 				$this->auth->login($user);
 
-				echo $data->_id;
-
-				echo '<br>';
-
-				d($user);
-
-				// return redirect()->to(site_url('/home'));
+				return redirect()->to(site_url('/home'));
 			else:
 				return redirect()->to(site_url('/'));
 			endif;
@@ -62,11 +54,9 @@ class Index extends BaseController {
 		$nickname   = $this->request->getPost('nickname');
 		$secret_key = $this->request->getPost('secret_key');
 
-		if($this->account->signup($nickname, $secret_key)):
-			echo 'Usuario agragado';
-		else:
-			echo 'Error!';
-		endif;
+		$response = $this->account4->signup($nickname, $secret_key);
+
+		d($response);
 	}
 
 }

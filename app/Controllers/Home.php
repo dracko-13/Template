@@ -21,29 +21,17 @@ class Home extends BaseController {
 
 	function findUserName() {
 		if($this->auth->id()):
-			$username = $_POST['username'];
+			$username = $this->request->getPost('username');
 
 			$rows = $this->username->findUserName($username);
 
-			if( empty( $rows ) ):
-				echo '1';
-			else:
-				echo '0';
-			endif;
-		else:
-			return redirect()->to(site_url('/'));
+			d($rows);
 		endif;
 	}
 
 	function setUserName() {
 		if($this->auth->id()):
-			$username = $_POST['username'];
-
-			if($this->username->setUserName($username, $this->auth->id())):
-				echo '1';
-			else:
-				echo '0';
-			endif;
+			$username = $this->request->getPost('username');
 		else:
 			return redirect()->to(site_url('/'));
 		endif;

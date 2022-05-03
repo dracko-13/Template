@@ -32,35 +32,3 @@ CREATE TABLE `accounts`.`ci_sessions` (
 	`data` BLOB NOT NULL,
 	PRIMARY KEY (`id`, `ip_address`)
 );
-
-
--- MongoDB
-
-show dbs
-
-	admin   0.000GB
-	config  0.000GB
-	local   0.000GB
-
-use ci4
-
-	switched to db ci4
-
-show collections
-
-db.accounts.insert(
-	{
-		nickname: 'admin',
-		secret_key: '$2y$10$kE7NJ/UxOweN3pVWSKf9e.cE6ahclPtSfOepNnskjDAXujrXD9o.6'
-	}
-)
-
-db.accounts.findOne(
-	{
-		'nickname': 'admin'
-	}
-)
-
-db.accounts.count()
-
-db.dropDatabase()
