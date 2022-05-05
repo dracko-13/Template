@@ -10,18 +10,12 @@
 		"psr/log": "^1.1",
 		"fakerphp/faker": "^1.19",
 		"fpdf/fpdf": "^1.83",
-		"mmo/faker-images": "^0.6.0",
 		"tatter/imposter": "^1.1",
 		"mongodb/mongodb": "^1.12",
 		"ramsey/uuid": "^4.2"
 	},
 	"require-dev": {
-		"codeigniter/coding-standard": "^1.1",
-		"friendsofphp/php-cs-fixer": "^3.1",
-		"mikey179/vfsstream": "^1.6",
-		"nexusphp/cs-config": "^3.3",
-		"phpunit/phpunit": "^9.1",
-		"predis/predis": "^1.1"
+		"codeigniter/coding-standard": "^1.1"
 	},
 	"autoload": {
 		"psr-4": {
@@ -30,8 +24,5 @@
 		"exclude-from-classmap": [
 			"**/Database/Migrations/**"
 		]
-	},
-	"provide": {
-		"codeigniter4/authentication-implementation": "1.0"
 	}
 }

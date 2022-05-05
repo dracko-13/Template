@@ -50,9 +50,8 @@ class BaseController extends Controller
         // E.g.: $this->session = \Config\Services::session();
 
 		$this->account  = model('Account');
-		$this->username = model('Username');
 
-        $this->auth = service('auth');
+		$this->auth = service('auth');
 
 		$this->request  = \Config\Services::request();
 		$this->session  = \Config\Services::session();
