@@ -10,25 +10,21 @@ MongoDB server version: 4.4.13
 admin   0.000GB
 config  0.000GB
 local   0.000GB
-> use dipromi
-switched to db dipromi
+> use ci4
+switched to db ci4
 > show collections
 
 db.groups.insert(
 	{
 		uuid: '0855e982-b0ce-4f8a-946f-e8a4ff476f2d',
 		roll: 'Administrador'
-	},
-	{
-		uuid: '28f6f0ef-b07c-4244-8dcd-0cfdfc923f56',
-		roll: 'Almacenista'
 	}
 )
 
 db.accounts.insert(
 	{
-		uuid: 'dc56a122-5fb4-42b5-bf36-44cddd00e91c',
-		nickname: 'dracko-13',
+		uuid:       'dc56a122-5fb4-42b5-bf36-44cddd00e91c',
+		nickname:   'dracko-13',
 		secret_key: '$2y$10$yg9Nm2EYPL5xZzm01KixR.J40cGxMA64OhEN1lwc3.fB2cXDrZMde',
 		group_uuid: '0855e982-b0ce-4f8a-946f-e8a4ff476f2d'
 	}
@@ -36,9 +32,9 @@ db.accounts.insert(
 
 db.accounts.aggregate({
 	$lookup:{
-		from:"groups",
-		localField:"roll_uuid",
-		foreignField:"uuid",
-		as:"accounts_groups"
+		from:         'groups',
+		localField:   'roll_uuid',
+		foreignField: 'uuid',
+		as:           'accounts_groups'
 	}
 })
