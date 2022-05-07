@@ -46,7 +46,7 @@ class Index extends BaseController {
 	}
 
 	public function logout() {
-		service('auth')->logout();
+		$this->auth->logout();
 		return redirect()->to(site_url('/'));
 	}
 
