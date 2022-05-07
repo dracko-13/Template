@@ -32,7 +32,7 @@ class Index extends BaseController {
 
 				$user->id          = $data->uuid;
 				$user->groups      = ['Administrators'];
-				$user->permissions = ['total'];
+				$user->permissions = ['Total'];
 
 				$this->auth->login($user);
 
