@@ -1,4 +1,0 @@
-[Thu May 19 10:40:07.221352 2022] [php:warn] [pid 976] [client 192.168.0.30:59282] PHP Warning:  Undefined variable $dotenv in /https/app/db/db.php on line 15
-[Thu May 19 10:40:07.221401 2022] [php:error] [pid 976] [client 192.168.0.30:59282] PHP Fatal error:  Uncaught Error: Call to a member function load() on null in /https/app/db/db.php:15\nStack trace:\n#0 /https/app/db/db.php(23): Database->__construct()\n#1 {main}\n  thrown in /https/app/db/db.php on line 15
-[Thu May 19 10:40:59.094317 2022] [php:error] [pid 973] [client 192.168.0.30:59284] PHP Fatal error:  Constant expression contains invalid operations in /https/app/db/db.php on line 11
-[Thu May 19 10:41:52.940739 2022] [php:error] [pid 11656] [client 192.168.0.30:59286] PHP Fatal error:  Uncaught Error: Class "MongoDB\\Client" not found in /https/app/db/db.php:17\nStack trace:\n#0 /https/app/db/db.php(23): Database->__construct()\n#1 {main}\n  thrown in /https/app/db/db.php on line 17

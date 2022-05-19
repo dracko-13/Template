@@ -2,6 +2,8 @@
 
 	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/app/db/db.php' );
 
+	use Ramsey\Uuid\Uuid;
+
 	class DAO extends Database {
 
 		private $db   = NULL;
@@ -13,3 +15,5 @@
 		}
 
 	}
+
+# Uuid::uuid4()->toString()
