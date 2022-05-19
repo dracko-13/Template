@@ -1,8 +1,7 @@
 {
-    "require": {
-        "fpdf/fpdf": "^1.83",
-        "kint-php/kint": "^3.3",
-        "ramsey/uuid": "^4.2",
-        "vlucas/phpdotenv": "^5.4"
-    }
+	"require": {
+		"mongodb/mongodb": "^1.11",
+		"ramsey/uuid": "^4.2",
+		"vlucas/phpdotenv": "^5.4"
+	}
 }

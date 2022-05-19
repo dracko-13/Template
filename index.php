@@ -1,8 +1,9 @@
 <?php
 
 	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/vendor/autoload.php' );
+	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/app/helpers/pd.php' );
 
-	error_log(print_r($_SERVER, true), 3, $_SERVER[ 'DOCUMENT_ROOT' ] . '/logger/' . date('Y-m-d', time()) . '.log');
+	# error_log(print_r($_SERVER, true), 3, $_SERVER[ 'DOCUMENT_ROOT' ] . '/logger/' . date('Y-m-d', time()) . '.log');
 
 ?>
 
