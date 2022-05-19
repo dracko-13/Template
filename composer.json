@@ -1,11 +1,8 @@
 {
     "require": {
-        "catfan/medoo": "^2.1",
-        "fakerphp/faker": "^1.17",
         "fpdf/fpdf": "^1.83",
         "kint-php/kint": "^3.3",
-        "monolog/monolog": "^2.3",
-        "mmo/faker-images": "^0.6.0",
+        "ramsey/uuid": "^4.2",
         "vlucas/phpdotenv": "^5.4"
     }
 }

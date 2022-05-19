@@ -1,14 +1,13 @@
 <?php
 
 	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/app/db/db.php' );
-	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/app/helpers/logger.php' );
 
-	class DAO {
+	class DAO extends Database {
 
-		private $db = NULL;
-
-		function __construct() {
-			$this->db = new Databases();
+		private $data = [];
+	
+		public function __construct() {
+			parent::__construct();
 		}
 
 	}
