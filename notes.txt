@@ -1,1 +1,3 @@
 sudo rm logger/*.log
+
+sudo systemctl restart socket.service && sudo systemctl status socket.service

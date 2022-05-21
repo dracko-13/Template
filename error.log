@@ -1,0 +1,7 @@
+[Sat May 21 12:29:03.105823 2022] [php:warn] [pid 11371] [client 192.168.0.30:57494] PHP Warning:  socket_connect(): unable to connect [111]: Connection refused in /https/socket.php on line 9
+[Sat May 21 12:29:03.105891 2022] [php:warn] [pid 11371] [client 192.168.0.30:57494] PHP Warning:  socket_write(): unable to write to socket [32]: Broken pipe in /https/socket.php on line 11
+[Sat May 21 12:29:03.105909 2022] [php:warn] [pid 11371] [client 192.168.0.30:57494] PHP Warning:  socket_read(): unable to read from socket [107]: Transport endpoint is not connected in /https/socket.php on line 13
+[Sat May 21 12:52:01.622107 2022] [php:error] [pid 11371] [client 192.168.0.30:57514] PHP Fatal error:  Cannot declare class Socket, because the name is already in use in /https/socket.php on line 4
+[Sat May 21 12:52:05.200955 2022] [php:error] [pid 11371] [client 192.168.0.30:57514] PHP Fatal error:  Cannot declare class Socket, because the name is already in use in /https/socket.php on line 4
+[Sat May 21 12:53:10.109249 2022] [php:warn] [pid 948] [client 192.168.0.30:57518] PHP Warning:  socket_bind(): Unable to bind address [98]: Address already in use in /https/socket.php on line 13
+[Sat May 21 12:54:15.947957 2022] [php:warn] [pid 11375] [client 192.168.0.30:57522] PHP Warning:  socket_bind(): Unable to bind address [98]: Address already in use in /https/socket.php on line 5

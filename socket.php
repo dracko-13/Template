@@ -1,36 +1,30 @@
 <?php
 
-	require_once( '/https/vendor/autoload.php' );
+	$socket = socket_create(AF_INET, SOCK_STREAM, 0);
 
-	use Ratchet\MessageComponentInterface;
-	use Ratchet\ConnectionInterface;
+	socket_bind($socket, '192.168.0.30', '8080');
 
-	class MySocket implements MessageComponentInterface {
+	socket_listen($socket, 3);
 
-		public function __construct() {
-			$this->clients = new \SplObjectStorage;
-		}
+	$spawn = socket_accept($socket);
 
-		public function onOpen(ConnectionInterface $connection) {
-			$this->clients->attach($connection);
+	$input = socket_read($spawn, 1024);
 
-			error_log('New connection: ' . $connection->resourceId . "\n", 3, '/https/logger/connections.log');
-		}
+	$response = json_decode($input);
 
-		public function onMessage(ConnectionInterface $from, $message) {
-			foreach( $this->clients as $client ):
-				if( $from->resourceId == $client->resourceId ):
-					continue;
-				endif;
-				$client->send($message);
-				error_log(print_r($message, true), 3, '/https/logger/messages.log');
-			endforeach;
-		}
+	switch($response->action):
 
-		public function onClose(ConnectionInterface $connection) {
-		}
+		case '1':
+			socket_write($spawn, json_encode(['response' => 'Ok']));
+		break;
 
-		public function onError(ConnectionInterface $connection, \Exception $e) {
-		}
+		default;
+			socket_write($spawn, json_encode(['response' => 'Fail']));
+		break;
 
-	}
+	endswitch;
+
+	socket_close($spawn);
+
+	socket_close($socket);
+
