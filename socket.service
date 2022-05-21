@@ -1,0 +1,10 @@
+[Unit]
+Description=Socket Server
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/php8.1 /https/server.php
+
+[Install]
+WantedBy=multi-user.target

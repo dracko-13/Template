@@ -19,9 +19,27 @@
 	</head>
 		<body>
 
+			<input type="text" id="message" />
+			<button onclick="transmitMessage()">Send</button>
+
 			<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 			<script src="dist/js/main.js"></script>
+
+			<script>
+
+				var socket  = new WebSocket('ws://localhost:8080');
+				var message = document.getElementById('message');
+
+				function transmitMessage() {
+					socket.send( message.value );
+				}
+
+				socket.onmessage = function(e) {
+					alert(e.data);
+				}
+
+			</script>
 
 		</body>
 </html>
