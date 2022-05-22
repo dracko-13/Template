@@ -2,7 +2,7 @@
 
 sudo apt update && sudo apt upgrade -y
 sleep 3
-sudo apt install -y mate-desktop-environment-core
+sudo apt install -y mate-desktop-environment-core lightdm
 sleep 3
 sudo dpkg-reconfigure locales
 sleep 3
