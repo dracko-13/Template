@@ -13,8 +13,8 @@
 		public function __construct() {
 			$this->dotenv = Dotenv::createImmutable( $_SERVER[ 'DOCUMENT_ROOT' ] . '/' );
 			$this->dotenv->load();
-			$dns = sprintf("mongodb://%s:%s@%s:%s", $_ENV[ 'USER' ], $_ENV[ 'PASSWORD' ], $_ENV[ 'HOST' ], $_ENV[ 'PORT' ]);
-			$this->link = new Client($dns);
+			$dns = sprintf( "mongodb://%s:%s@%s:%s", $_ENV[ 'USER' ], $_ENV[ 'PASSWORD' ], $_ENV[ 'HOST' ], $_ENV[ 'PORT' ] );
+			$this->link = new Client( $dns );
 		}
 	
 	}
