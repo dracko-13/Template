@@ -19,42 +19,9 @@
 	</head>
 		<body>
 
-
-			<button onClick="sendMessage()">Click</button>
-
 			<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 			<script src="dist/js/main.js"></script>
-
-			<script>
-
-				var socket  = new WebSocket('ws://localhost:8080');
-
-				socket.onopen = function(e) {
-					console.log('Socket open!');
-				}
-
-				socket.onmessage = function(e) {
-					console.log(e.data);
-				}
-
-				socket.onerror = function(e) {
-					console.danger(e.message);
-				};
-
-				function sendMessage() {
-
-					var message = {
-						type: 'message',
-						text: 'XD',
-						id:   1,
-						date: Date.now()
-					};
-
-					socket.send(JSON.stringify(message));
-				}
-
-			</script>
 
 		</body>
 </html>
