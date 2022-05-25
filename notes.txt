@@ -3,3 +3,5 @@ Uuid::uuid4()->toString()
 sudo rm logger/*.log
 
 sudo systemctl restart socket.service && sudo systemctl status socket.service
+
+https://www.pngwing.com/es

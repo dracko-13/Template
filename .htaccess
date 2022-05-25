@@ -7,5 +7,6 @@
 	RewriteRule ^dist/?$ - [F,L]
 	RewriteRule ^logger/?$ - [F,L]
 	RewriteRule ^plugins/?$ - [F,L]
+	RewriteRule ^resources/?$ - [F,L]
 	RewriteRule ^vendor/?$ - [F,L]
 </IfModule>
