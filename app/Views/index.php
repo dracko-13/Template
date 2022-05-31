@@ -29,37 +29,8 @@
 			<div class="d-grid gap-2">
 				<button type="submit" class="btn btn-outline-secondary"><i class="bi bi-box-arrow-in-right"></i> Login</button>
 			</div>
-			<a data-bs-toggle="modal" data-bs-target="#singUpForm">¿No tienes cuenta?</a>
 		</form>
 	</div>
-
-	<div class="modal fade" id="singUpForm" tabindex="-1" aria-labelledby="singUpFormLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="singUpFormLabel">Crea tu cuenta</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					<form action="<?= site_url('/signup') ?>" method="post">
-						<div class="form-floating mb-2">
-							<input type="text" class="form-control" name="nickname" placeholder="Apodo">
-							<label for="nickname">Apodo</label>
-						</div>
-						<div class="form-floating mb-2">
-							<input class="form-control" type="password" name="secret_key" placeholder="********">
-							<label for="secret_key">********</label>
-						</div>
-						<input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>">
-						<div class="d-grid gap-2">
-							<button type="submit" class="btn btn-outline-secondary"><i class="bi bi-person"></i> Signup</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-
 <?= $this->endSection() ?>
 
 <?= $this->section('scripts') ?>

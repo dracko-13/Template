@@ -12,19 +12,6 @@ INSERT INTO
 VALUES
 	(null, 'admin', '$2y$10$kE7NJ/UxOweN3pVWSKf9e.cE6ahclPtSfOepNnskjDAXujrXD9o.6');
 
-CREATE TABLE `accounts`.`usernames` (
-	`id_username` TINYINT NOT NULL AUTO_INCREMENT,
-	`username`    VARCHAR(30) NOT NULL,
-	`account_id`  TINYINT(3) DEFAULT NULL ,
-	CONSTRAINT `fk_account_id` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id_account`) ON DELETE CASCADE ON UPDATE CASCADE,
-	PRIMARY KEY (`id_username`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-INSERT INTO
-	`accounts`.`usernames`
-VALUES
-	(null, 'administrator', 1);
-
 CREATE TABLE `accounts`.`ci_sessions` (
 	`id` VARCHAR(128) NOT NULL,
 	`ip_address` VARCHAR(45) NOT NULL,

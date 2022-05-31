@@ -2,12 +2,10 @@
 
 namespace App\Controllers;
 
-use Tatter\Imposter\Entities\User;
-
 class Index extends BaseController {
 
 	public function index()	{
-		if($this->auth->id()):
+		if():
 			return redirect()->to(site_url('/home'));
 		else:
 			$data = [
@@ -28,14 +26,6 @@ class Index extends BaseController {
 			if(password_verify($secret_key, $data->secret_key)):
 				$this->account->updateSecretKey($data->uuid, $secret_key);
 
-				$user = new User();
-
-				$user->id          = $data->uuid;
-				$user->groups      = ['Administrators'];
-				$user->permissions = ['Total'];
-
-				$this->auth->login($user);
-
 				return redirect()->to(site_url('/home'));
 			else:
 				return redirect()->to(site_url('/'));
@@ -46,17 +36,7 @@ class Index extends BaseController {
 	}
 
 	public function logout() {
-		$this->auth->logout();
 		return redirect()->to(site_url('/'));
-	}
-
-	public function signup() {
-		$nickname   = $this->request->getPost('nickname');
-		$secret_key = $this->request->getPost('secret_key');
-
-		$response = $this->account4->signup($nickname, $secret_key);
-
-		d($response);
 	}
 
 }
