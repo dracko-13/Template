@@ -1,0 +1,5 @@
+USER=dracko-13
+PASSWORD=dracko-13
+HOST=127.0.0.1
+PORT=27017
+DATABASE=test
