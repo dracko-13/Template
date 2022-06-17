@@ -1,0 +1,14 @@
+[Tue Jun 14 02:41:29.970528 2022] [ssl:warn] [pid 1096] AH01906: 127.0.0.1:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Jun 14 02:41:29.970789 2022] [ssl:warn] [pid 1096] AH01909: 127.0.0.1:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Jun 14 02:41:33.585487 2022] [ssl:warn] [pid 1167] AH01906: 127.0.0.1:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Jun 14 02:41:33.585636 2022] [ssl:warn] [pid 1167] AH01909: 127.0.0.1:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Jun 14 16:42:05.944375 2022] [ssl:warn] [pid 1162] AH01906: 127.0.0.1:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Jun 14 16:42:05.962900 2022] [ssl:warn] [pid 1162] AH01909: 127.0.0.1:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Jun 14 16:42:10.338578 2022] [ssl:warn] [pid 1222] AH01906: 127.0.0.1:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Jun 14 16:42:10.338691 2022] [ssl:warn] [pid 1222] AH01909: 127.0.0.1:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Jun 17 00:15:13.377210 2022] [ssl:warn] [pid 1222] AH01906: 127.0.0.1:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Jun 17 00:15:13.377401 2022] [ssl:warn] [pid 1222] AH01909: 127.0.0.1:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Jun 17 00:22:30.955187 2022] [ssl:warn] [pid 57376] AH01906: 127.0.0.1:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Jun 17 00:22:30.955417 2022] [ssl:warn] [pid 57376] AH01909: 127.0.0.1:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Jun 17 00:22:31.213569 2022] [ssl:warn] [pid 57377] AH01906: 127.0.0.1:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Jun 17 00:22:31.213668 2022] [ssl:warn] [pid 57377] AH01909: 127.0.0.1:443:0 server certificate does NOT include an ID which matches the server name

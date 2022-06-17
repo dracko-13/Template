@@ -1,0 +1,8 @@
+
+CONNECTION TO MARIADB SERVER
+
+	mariadb --host 192.168.0.30 --port 3306 --user alumno --password
+
+CONNECTION TO MAONGODB SERVER
+
+	mongosh --host 192.168.0.30 --port 27017 --user alumno --password
