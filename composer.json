@@ -1,7 +1,6 @@
 {
 	"require": {
 		"mongodb/mongodb": "^1.11",
-		"ramsey/uuid": "^4.3",
 		"vlucas/phpdotenv": "^5.4"
 	}
 }
