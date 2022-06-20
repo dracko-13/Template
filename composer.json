@@ -1,6 +1,7 @@
 {
 	"require": {
 		"mongodb/mongodb": "^1.11",
-		"vlucas/phpdotenv": "^5.4"
+		"vlucas/phpdotenv": "^5.4",
+		"catfan/medoo": "^2.1"
 	}
 }

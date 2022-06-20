@@ -1,17 +1,21 @@
 <?php
 
-	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/jasr/app/db/db.php' );
+	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/jasr/app/constants/constants.php' );
+	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/jasr/app/db/mariadb.php' );
+	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/jasr/app/db/mongodb.php' );
 
 	use Ramsey\Uuid\Uuid;
 
-	class DAO extends Database {
+	class DAO {
 
-		private $db   = NULL;
-		private $data = [];
+		private $mariadb = NULL;
+		private $mongodb = NULL;
+		private $data    = [];
 
 		public function __construct() {
-			parent::__construct();
-			$this->db = $this->link->selectDatabase( $_ENV[ 'DATABASE' ] );
+			$this->mariadb = getMariaDBConnection();
+			$this->mongodb = getMongoDBConnection();
+			$this->mongodb->selectDatabase( $_ENV[ 'DATABASE' ] );
 		}
 
 	}

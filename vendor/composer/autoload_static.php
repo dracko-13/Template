@@ -27,6 +27,7 @@ class ComposerStaticInitbb23dcf711ba2f97eb2266d1352cf8a2
         'M' => 
         array (
             'MongoDB\\' => 8,
+            'Medoo\\' => 6,
         ),
         'J' => 
         array (
@@ -62,6 +63,10 @@ class ComposerStaticInitbb23dcf711ba2f97eb2266d1352cf8a2
         'MongoDB\\' => 
         array (
             0 => __DIR__ . '/..' . '/mongodb/mongodb/src',
+        ),
+        'Medoo\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/catfan/medoo/src',
         ),
         'Jean85\\' => 
         array (
