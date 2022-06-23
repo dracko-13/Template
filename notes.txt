@@ -1,0 +1,2 @@
+error_log(print_r($data, true), 3, LOGGER);
+

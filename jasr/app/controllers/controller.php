@@ -6,7 +6,7 @@
 
 	$choice = isset( $_GET[ 'choice' ] ) ? $_GET[ 'choice' ] : '';
 
-	switch ( $choice ):
+	switch( $choice ):
 
 		default:
 			header( 'Location: /' );
