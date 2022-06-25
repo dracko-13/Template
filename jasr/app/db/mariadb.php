@@ -10,7 +10,7 @@
 		$dot = Dotenv::createImmutable( $_SERVER[ 'DOCUMENT_ROOT' ] . '/', '.mariadb' );
 		$dot->load();
 		return new Medoo([
-			'type'     => 'mysql',
+			'type'     => $_ENV[ 'TYPE' ],
 			'host'     => $_ENV[ 'HOST' ],
 			'database' => $_ENV[ 'DATABASE' ],
 			'username' => $_ENV[ 'USER' ],

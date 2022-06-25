@@ -1,3 +1,4 @@
+TYPE=mysql
 USER=dracko-13
 PASSWORD=dracko-13
 HOST=192.168.0.250
