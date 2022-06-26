@@ -17,9 +17,9 @@
 
 			<?= $this->renderSection('section') ?>
 
-			<div class="container-fluid px-2 py-2 mt-5">
-				<p>
-					<b style="color: green"><?= CodeIgniter\CodeIgniter::CI_VERSION ?> - <?= strtoupper(ENVIRONMENT) ?> <i class="bi bi-bug-fill"></i></b>
+			<div class="container-fluid p-2">
+				<p class="text-center">
+					<?= CodeIgniter\CodeIgniter::CI_VERSION ?> - <?= strtoupper(ENVIRONMENT) ?>
 				</p>
 			</div>
 
