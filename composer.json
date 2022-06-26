@@ -9,8 +9,7 @@
 		"laminas/laminas-escaper": "^2.9",
 		"psr/log": "^1.1",
 		"fpdf/fpdf": "^1.83",
-		"mongodb/mongodb": "^1.12",
-		"ramsey/uuid": "^4.2"
+		"mongodb/mongodb": "^1.12"
 	},
 	"require-dev": {
 		"codeigniter/coding-standard": "^1.1"
@@ -18,9 +17,6 @@
 	"autoload": {
 		"psr-4": {
 			"CodeIgniter\\": "system/"
-		},
-		"exclude-from-classmap": [
-			"**/Database/Migrations/**"
-		]
+		}
 	}
 }
