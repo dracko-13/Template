@@ -4,8 +4,6 @@
 	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/jasr/app/db/mariadb.php' );
 	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/jasr/app/db/mongodb.php' );
 
-	use Ramsey\Uuid\Uuid;
-
 	class DAO {
 
 		private $mariadb = NULL;

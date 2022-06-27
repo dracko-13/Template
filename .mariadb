@@ -1,6 +1,6 @@
 TYPE=mysql
-USER=dracko-13
-PASSWORD=dracko-13
-HOST=192.168.0.250
+USER=alumno
+PASSWORD=alumno
+HOST=rpi4.local
 PORT=3306
 DATABASE=test
