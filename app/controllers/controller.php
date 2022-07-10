@@ -1,7 +1,7 @@
 <?php
 
-	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/jasr/app/constants/constants.php' );
-	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/jasr/app/dao/dao.php' );
+	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/app/constants/constants.php' );
+	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/app/dao/dao.php' );
 
 	$dao = new DAO();
 

@@ -1,8 +1,8 @@
 <?php
 
-	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/jasr/app/constants/constants.php' );
-	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/jasr/app/db/mariadb.php' );
-	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/jasr/app/db/mongodb.php' );
+	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/app/constants/constants.php' );
+	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/app/db/mariadb.php' );
+	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/app/db/mongodb.php' );
 
 	class DAO {
 

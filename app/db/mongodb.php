@@ -1,7 +1,7 @@
 <?php
 
 	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/vendor/autoload.php' );
-	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/jasr/app/constants/constants.php' );
+	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . '/app/constants/constants.php' );
 
 	use MongoDB\Client;
 	use Dotenv\Dotenv;
